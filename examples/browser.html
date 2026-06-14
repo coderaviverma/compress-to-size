@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>compress-to-size — live demo</title>
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; }
+    label { display: block; margin: 1rem 0 .25rem; font-weight: 600; }
+    output { display: block; margin-top: 1rem; white-space: pre-wrap; }
+    img { max-width: 100%; margin-top: 1rem; border-radius: 8px; }
+    a { color: #4f46e5; }
+  </style>
+</head>
+<body>
+  <h1>compress-to-size</h1>
+  <p>Pick an image and a target size — it's compressed entirely in your browser.
+     Full toolkit at <a href="https://imageconvertertool.com">imageconvertertool.com</a>.</p>
+
+  <label for="file">Image</label>
+  <input id="file" type="file" accept="image/*" />
+
+  <label for="kb">Target size (KB)</label>
+  <input id="kb" type="number" value="50" min="1" />
+
+  <output id="result"></output>
+  <img id="preview" alt="" hidden />
+
+  <script type="module">
+    import { compressImageToSize } from '../src/index.js';
+
+    const file = document.getElementById('file');
+    const kb = document.getElementById('kb');
+    const result = document.getElementById('result');
+    const preview = document.getElementById('preview');
+
+    async function run() {
+      if (!file.files[0]) return;
+      const target = Number(kb.value) * 1024;
+      result.textContent = 'Compressing…';
+      const blob = await compressImageToSize(file.files[0], target);
+      const before = (file.files[0].size / 1024).toFixed(1);
+      const after = (blob.size / 1024).toFixed(1);
+      result.textContent = `${before} KB → ${after} KB  (target ${kb.value} KB)`;
+      preview.src = URL.createObjectURL(blob);
+      preview.hidden = false;
+    }
+
+    file.addEventListener('change', run);
+    kb.addEventListener('change', run);
+  </script>
+</body>
+</html>

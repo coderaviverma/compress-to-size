@@ -1,0 +1,45 @@
+{
+  "name": "compress-to-size",
+  "version": "0.1.0",
+  "description": "Compress an image to an exact target file size (e.g. 50 KB) entirely in the browser — no uploads, no server. The engine behind ImageConverterTool.",
+  "type": "module",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "image",
+    "compression",
+    "compress",
+    "image-compression",
+    "resize",
+    "canvas",
+    "browser",
+    "client-side",
+    "webp",
+    "jpeg",
+    "file-size",
+    "target-size",
+    "privacy"
+  ],
+  "homepage": "https://imageconvertertool.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderaviverma/compress-to-size.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coderaviverma/compress-to-size/issues"
+  },
+  "author": "Avinash Verma (https://imageconvertertool.com)",
+  "license": "MIT",
+  "sideEffects": false
+}
