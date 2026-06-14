@@ -1,7 +1,7 @@
 # compress-to-size
 
-[![npm version](https://img.shields.io/npm/v/compress-to-size.svg)](https://www.npmjs.com/package/compress-to-size)
-[![license](https://img.shields.io/npm/l/compress-to-size.svg)](./LICENSE)
+[![version](https://img.shields.io/github/package-json/v/coderaviverma/compress-to-size?label=version)](https://github.com/coderaviverma/compress-to-size)
+[![license](https://img.shields.io/github/license/coderaviverma/compress-to-size)](./LICENSE)
 [![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](./package.json)
 
 **Compress an image to an exact file-size target — `50 KB`, `200 KB`, whatever you need — entirely in the browser.** No uploads, no server, no dependencies. It's the encoding core behind the exact-size tools at **[ImageConverterTool](https://imageconvertertool.com/compress-image/)**, extracted into a tiny standalone library.
